@@ -1,2 +1,2 @@
 # CN-LAB
-CN lab program
+CN lab program for SIT Student
