@@ -1,67 +1,43 @@
 #include <bits/stdc++.h>
-
 using namespace std;
-
+#define fr(a,b) for(i=a;i<b;i++)
+#define rep(a,b) for(i=a;i>=b;i--)
+#define f first
+#define s second
+#define inp(a,n) fr(i,n) cin>>a[i]
+#define print(a,n) fr(i,n) {cout << a[i] << " ";} cout << endl
+#define ll long long
+#define my(type) (char *)(&type+1)-(char *)(&type)
 int main()
 {
-    srand(time(NULL));
-    pair<int,string>a[200];
-    cout<<"\nEnter the message : ";
+    int i=0;
+    cout<<"\nEnter the message :";
     string s;
     getline(cin,s);
-    int i,j;
+    vector<string>v;
     int k=0;
-    j=0;
-    s+=' ';
-    int n=s.length();
-/*    cout<<s.substr(0,5)<<endl;
-    cout<<s.substr(5,3)<<endl;
-    cout<<s.substr(8,3)<<endl;*/
-    int count=0;
-   for(i=0;i<n;i++)
+    std::istringstream iss(s);
+    for(string s;iss>>s;)
+        v.push_back(s);
+     int n=v.size();
+    int a[n];//for random generations
+    for(i=0;i<n;i++)
     {
-        count++;
-        if(s[i]==' ')
-        {
-            a[k].second=s.substr(j,count);
-            a[k].first=k;
-        //    cout<<a[k].first<<"-->"<<a[k].second<<"\n";
-            k++;
-            j=i+1;
-            count=0;
-        }
+        a[i]=i;
     }
-    int c[200]={0};
-    cout<<"Intermediate message is : ";
-    int flag=1;
-    for(i=0;;i++)
+    cout<<"Intermediate message is :\n";
+    fr(0,n)
     {
-        int value=rand()%(k);
-        if(c[value]==0)
-            c[value]=1;
-        else
-            c[value]=-1;
-        flag=1;
-        for(j=0;j<k;j++)
-        {
-            if(c[j]==1)
-            {
-                 cout<<a[value].first<<""<<a[value].second<<" ";
-                 c[j]=999;
-            }
-            else if(c[j]==0)
-                flag=0;
-        }
-        if(flag==1)
-            break;
+        cout<<a[i]<<v[i]<<" ";
+    }
+    cout<<endl;
 
-    }
-    cout<<"\nOriginal Message is : ";
-    for(i=0;i<k;i++)
+    random_shuffle(&a[0],&a[n]);
+    i=0;
+    //print(a,n);
+    for(i=0;i<v.size();i++)
     {
-        cout<<a[i].first<<""<<a[i].second<<" ";
+        cout<<a[i];
+        cout<<v[a[i]]<<" ";
     }
-
-    return 0;
 }
-
