@@ -11,33 +11,36 @@ using namespace std;
 int main()
 {
     int i=0;
+    srand(time(NULL));
     cout<<"\nEnter the message :";
-    string s;
-    getline(cin,s);
+    string s="hello how are you i hope you are fine";
+    //getline(cin,s);
     vector<string>v;
     int k=0;
     std::istringstream iss(s);
     for(string s;iss>>s;)
         v.push_back(s);
-     int n=v.size();
+    int n=v.size();
     int a[n];//for random generations
     for(i=0;i<n;i++)
     {
         a[i]=i;
     }
-    cout<<"Intermediate message is :\n";
-    fr(0,n)
-    {
-        cout<<a[i]<<v[i]<<" ";
-    }
-    cout<<endl;
-
+    cout<<"\nIntermediate message is :\n";
     random_shuffle(&a[0],&a[n]);
-    i=0;
-    //print(a,n);
     for(i=0;i<v.size();i++)
     {
         cout<<a[i];
         cout<<v[a[i]]<<" ";
     }
+    i=0;
+    cout<<"\noriginal Message :\n";
+    fr(0,n)
+    {
+        cout<<i<<v[i]<<" ";
+    }
+    cout<<endl;
+
+    //print(a,n);
+
 }
