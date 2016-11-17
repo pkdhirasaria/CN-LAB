@@ -13,8 +13,8 @@ int main()
     int i=0;
     srand(time(NULL));
     cout<<"\nEnter the message :";
-    string s="hello how are you i hope you are fine";
-    //getline(cin,s);
+    string s;//="hello how are you i hope you are fine";
+    getline(cin,s);
     vector<string>v;
     int k=0;
     std::istringstream iss(s);
@@ -24,14 +24,14 @@ int main()
     int a[n];//for random generations
     for(i=0;i<n;i++)
     {
-        a[i]=i;
+        a[i]=i; // for assigning sequence number
     }
     cout<<"\nIntermediate message is :\n";
-    random_shuffle(&a[0],&a[n]);
+    random_shuffle(&a[0],&a[n]); // built in function for random shuffling
     for(i=0;i<v.size();i++)
     {
-        cout<<a[i];
-        cout<<v[a[i]]<<" ";
+        cout<<a[i]; // for printing sequence number
+        cout<<v[a[i]]<<" ";//printing message according to sequence number
     }
     i=0;
     cout<<"\noriginal Message :\n";
