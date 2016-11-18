@@ -1,9 +1,10 @@
 #include<stdio.h>
 #include<string.h>
+#include<bits/stdc++.h>
 int main()
-{ 
-	int r,m,j,i,t,k;  
-	char msg[30];  
+{
+	int r,m,j,i,t,k;
+	char msg[30];
 	char g[]="10001000000100001",dup[50];
 	printf("Enter the binary data\n");
  	scanf("%s",msg);
@@ -36,10 +37,10 @@ int main()
   		msg[k]=dup[k];
 	msg[k]='\0';
 	printf("\nThe code word is:%s\n",msg);
-            
+
 //receiving side
-	printf(“ enter the transmitted code word \n”);
-scanf(“%s”,msg);
+	printf(" enter the transmitted code word \n");
+scanf("%s",msg);
 
 printf("Received msg:%s\n",msg);
 						 //division
