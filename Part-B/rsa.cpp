@@ -36,10 +36,15 @@ int main()
 {
 
     // cin>>t;
+    string msg;
+    cout<<"\nEnter the message : ";
+
+        getline(cin,msg);
+
 
     //while(t--)
     int p,q,z,n,e,d;
-    string msg;
+   // string msg;
     do{
         cout<<"\nEnter the two prime number : ";
         cin>>p>>q;
@@ -55,9 +60,6 @@ int main()
             break;
     //printf("\n\tPublic Key\t: {%d,%d}",e,n);
 //    printf("\n\tPrivate Key\t: {%d,%d}",d,n);
-    cout<<"\nEnter the message : ";
-
-        getline(cin,msg);
 //    cin>>msg;
 
     int en[1000];
