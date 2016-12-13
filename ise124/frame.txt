@@ -1,0 +1,50 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int i=0;
+    srand(time(NULL));
+    cout<<"enter the message::"<<endl;
+    string s;
+    getline(cin,s);
+    vector<string>v;
+    std::istringstream iss(s);
+    for(string s; iss>>s;)
+      v.push_back(s);
+      int n=v.size();
+      int a[n];
+      for( i=0;i<n;i++)
+      {
+          a[i]=i;
+      }
+      cout<<"intermediate message is"<<endl;
+      random_shuffle(&a[0],&a[n]);
+      for( i=0;i<v.size();i++)
+      {
+           cout<<a[i];
+           cout<<v[a[i]]<<" ";
+      }
+      cout<<"\noriginal message\n";
+      i=0;
+      for( i=0;i<n;i++)
+      {
+          cout<<i<<v[i]<<" ";
+      }
+      cout<<"\n";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
